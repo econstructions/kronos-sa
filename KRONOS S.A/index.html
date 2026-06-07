@@ -1,0 +1,594 @@
+<!DOCTYPE HTML>
+<html lang="el">
+<head>
+    <title>ΚΡΟΝΟΣ ΟΕ - Αφοί Δρακάκη | Μεταφορική Εταιρεία Χανιά - Αθήνα</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Tailwind CSS για γρήγορη και σύγχρονη σχεδίαση, συνδυασμένη με το Story-style custom CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome για εικονίδια -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts (Fira Sans ή Roboto για καθαρά ελληνικά) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f4f4f7;
+            color: #4a4a5a;
+        }
+        
+        /* Story Template Custom Styles & Animations */
+        .banner {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, #ffffff, transparent);
+            pointer-events: none;
+        }
+
+        .spotlight {
+            display: flex;
+            align-items: center;
+            min-height: 70vh;
+            background-color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .spotlight:nth-child(even) {
+            background-color: #f9fafb;
+            flex-direction: row-reverse;
+        }
+
+        /* 3D και Hover Effects */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1e3a8a;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-teal-600 text-white p-2 rounded-lg group-hover:bg-blue-900 transition-colors">
+                    <i class="fa-solid fa-truck-fast text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold text-blue-950 tracking-wider block">ΚΡΟΝΟΣ ΟΕ</span>
+                    <span class="text-xs text-teal-600 font-semibold uppercase tracking-widest block -mt-1">Αφοι Δρακακη</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-blue-950 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </</button>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-blue-950">
+                <a href="#about" class="hover:text-teal-600 transition-colors">Ποιοι Είμαστε</a>
+                <a href="#services" class="hover:text-teal-600 transition-colors">Υπηρεσίες</a>
+                <a href="#storage" class="hover:text-teal-600 transition-colors">Αποθήκευση</a>
+                <a href="#offers" class="hover:text-teal-600 transition-colors">Προσφορές</a>
+                <a href="#contact" class="bg-teal-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-900 transition-all shadow-md hover:shadow-lg">Επικοινωνία</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 transition-all">
+            <a href="#about" class="block text-blue-950 font-semibold hover:text-teal-600 py-1">Ποιοι Είμαστε</a>
+            <a href="#services" class="block text-blue-950 font-semibold hover:text-teal-600 py-1">Υπηρεσίες</a>
+            <a href="#storage" class="block text-blue-950 font-semibold hover:text-teal-600 py-1">Αποθήκευση</a>
+            <a href="#offers" class="block text-blue-950 font-semibold hover:text-teal-600 py-1">Προσφορές</a>
+            <a href="#contact" class="block text-center bg-teal-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-900 transition-all">Επικοινωνία</a>
+        </div>
+    </header>
+
+    <!-- Hero / Banner Section -->
+    <section class="banner pt-20 text-white">
+        <!-- Background Decorative Circles -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-teal-200 font-semibold tracking-wider text-sm">
+                    <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                    <span>Ασφαλείς & Συνεπείς Μεταφορές</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+                    Συνδέουμε τα <br><span class="text-teal-300">Χανιά</span> με την <span class="text-teal-300">Αθήνα</span> και τον <span class="text-teal-300">κόσμο</span>. 
+                    
+                </h1>
+                <p class="text-lg text-blue-100 max-w-xl">
+                    Η <strong>ΚΡΟΝΟΣ ΟΕ (Αφοί Δρακάκη)</strong> προσφέρει εγγυημένες υπηρεσίες γενικών μεταφορών, εσωτερικής διανομής και αποθήκευσης με ιδιόκτητα καταστήματα και στόλο σε Κρήτη και Αττική.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-teal-400 text-blue-950 font-bold px-8 py-4 rounded-xl hover:bg-white transition-all shadow-lg text-center">
+                        Ζητήστε Προσφορά <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#services" class="border-2 border-white/40 hover:border-white text-white font-bold px-8 py-4 rounded-xl transition-all text-center">
+                        Οι Υπηρεσίες μας
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block relative">
+                <!-- SVG Illustration of Logistics/Truck for premium performance and no broken images -->
+                <svg viewBox="0 0 600 500" class="w-full h-auto drop-shadow-2xl">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0d9488;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Background card effect -->
+                    <rect x="50" y="50" width="500" height="400" rx="30" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="2"/>
+                    <!-- Network Path -->
+                    <path d="M 150 250 C 250 150, 350 350, 450 250" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="6" stroke-dasharray="10,10"/>
+                    <!-- Pin 1 (Chania) -->
+                    <circle cx="150" cy="250" r="14" fill="#2dd4bf"/>
+                    <circle cx="150" cy="250" r="24" fill="none" stroke="#2dd4bf" stroke-width="2" class="animate-ping"/>
+                    <text x="150" y="290" fill="#ffffff" font-weight="bold" font-size="16" text-anchor="middle">Χανιά</text>
+                    <!-- Pin 2 (Athens) -->
+                    <circle cx="450" cy="250" r="14" fill="#38bdf8"/>
+                    <circle cx="450" cy="250" r="24" fill="none" stroke="#38bdf8" stroke-width="2" class="animate-ping"/>
+                    <text x="450" y="290" fill="#ffffff" font-weight="bold" font-size="16" text-anchor="middle">Αθήνα</text>
+                    <!-- Pin 3 (pantou) -->
+                    <circle cx="300" cy="250" r="14" fill="#38bdf8"/>
+                    <circle cx="300" cy="250" r="24" fill="none" stroke="#38bdf8" stroke-width="2" class="animate-ping"/>
+                    <text x="320" y="300" fill="#ffffff" font-weight="bold" font-size="16" text-anchor="middle">Σε όλο τον Κόσμο</text>
+                    <!-- Truck Icon Graphic -->
+                    <g transform="translate(260, 190) scale(1.5)">
+                        <rect x="10" y="20" width="45" height="30" rx="3" fill="url(#grad1)"/>
+                        <path d="M 50 25 L 65 25 L 70 35 L 70 45 L 50 45 Z" fill="url(#grad1)"/>
+                        <circle cx="22" cy="48" r="6" fill="#1e293b"/>
+                        <circle cx="58" cy="48" r="6" fill="#1e293b"/>
+                        <rect x="53" y="28" width="10" height="8" fill="#e2e8f0"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: About & Presence -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-teal-600 font-extrabold uppercase tracking-wider text-sm block mb-2">Η Παρουσία μας</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-blue-950">Δύο Στρατηγικά Σημεία Εξυπηρέτησης</h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    Με φυσικά καταστήματα και αποθηκευτικούς χώρους σε Αθήνα και Χανιά, καλύπτουμε καθημερινά τις ανάγκες σας με συνέπεια και ασφάλεια.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Chania Office -->
+                <div class="bg-gradient-to-br from-slate-50 to-teal-50/30 p-8 rounded-3xl border border-teal-100/50 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex p-4 bg-teal-100 text-teal-700 rounded-2xl mb-6">
+                            <i class="fa-solid fa-location-dot text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-950 mb-2">Κεντρικό Κατάστημα Χανίων</h3>
+                        <p class="text-gray-600 mb-6">Το νευραλγικό μας κέντρο στην Κρήτη. Αναλαμβάνει όλες τις εσωτερικές διανομές στο νησί και τις φορτώσεις προς την ηπειρωτική Ελλάδα.</p>
+                        
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-map-marker-alt text-teal-600 mt-1"></i>
+                                <span><strong>Διεύθυνση:</strong> Λιτσάκιδων, Γαλατάς, Χανιά, ΤΚ 73100</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-teal-600"></i>
+                                <span><strong>Τηλέφωνο:</strong> 28210 XXXXX / 697XXXXXXX</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-teal-600"></i>
+                                <span><strong>Email:</strong> kronos_movers_chq@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <a href="#contact" class="text-teal-600 font-bold hover:text-blue-900 inline-flex items-center">
+                            Επικοινωνήστε με τα Χανιά <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Athens Office -->
+                <div class="bg-gradient-to-br from-slate-50 to-blue-50/30 p-8 rounded-3xl border border-blue-100/50 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex p-4 bg-blue-100 text-blue-700 rounded-2xl mb-6">
+                            <i class="fa-solid fa-location-dot text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-950 mb-2">Υποκατάστημα Αθηνών</h3>
+                        <p class="text-gray-600 mb-6">Ο κόμβος μας στην Αττική. Εξασφαλίζει άμεση παραλαβή, αποθήκευση και παράδοση εμπορευμάτων σε όλο το λεκανοπέδιο, και εκτός Αθήνας, όπως και γρήγορη προώθηση προς Χανιά. <i class="fa-solid fa-circle-info text-teal-600 mr-2"></i> </p>
+                        
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start space-x-3">
+                                <i class="fa-solid fa-map-marker-alt text-blue-600 mt-1"></i>
+                                <span><strong>Διεύθυνση:</strong> Επιδαύρου 13, Αγ. Ιωάννη Ρέντη, Αθήνα, ΤΚ 10447</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone text-blue-600"></i>
+                                <span><strong>Τηλέφωνο:</strong> 210 XXXXXXX / 697XXXXXXX</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-blue-600"></i>
+                                <span><strong>Email:</strong> kronos_movers_ath@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <a href="#contact" class="text-blue-600 font-bold hover:text-teal-600 inline-flex items-center">
+                            Επικοινωνήστε με την Αθήνα <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other locations disclaimer -->
+            <div class="mt-12 text-center bg-gray-50 border border-gray-100 rounded-2xl p-6 max-w-4xl mx-auto">
+                <p class="text-gray-600 text-base">
+                    <i class="fa-solid fa-circle-info text-teal-600 mr-2"></i>
+                    <strong>Εκτός Χανίων & Αθηνών;</strong> Καλύπτουμε μεταφορές και σε <strong>άλλες περιοχές της Ελλάδας</strong> <strong>και όλου του κόσμου</strong> κατόπιν <strong>συνεννόησης</strong>. Μη διστάσετε να μας ζητήσετε προσφορά!
+                </p> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Services (Spotlights style) -->
+    <section id="services" class="py-24 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-teal-600 font-extrabold uppercase tracking-wider text-sm block mb-2">Τι Κάνουμε</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-blue-950">Οι Υπηρεσίες Μας</h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    Απλές, αξιόπιστες και καθαρές λύσεις για ιδιώτες και επαγγελματίες.
+                </p>
+            </div>
+
+            <!-- Spotlight 1: Transfers & Distribution -->
+            <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm grid md:grid-cols-12 mb-12 items-center">
+                <div class="md:col-span-5 bg-gradient-to-br from-blue-900 to-teal-800 p-12 text-white h-full flex flex-col justify-center min-h-[320px]">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-truck-ramp-box text-5xl text-teal-300"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Μεταφορές & Εσωτερική Διανομή</h3>
+                    <p class="text-blue-100">
+                        Καθημερινά δρομολόγια με ασφάλεια. Αναλαμβάνουμε από ένα απλό δέμα έως ολόκληρη οικοσκευή ή εταιρικό φορτίο.
+                    </p>
+                </div>
+                <div class="md:col-span-7 p-8 md:p-12 space-y-6">
+                    <h4 class="text-xl font-bold text-blue-950">Πλήρης κάλυψη από πόρτα σε πόρτα (Door-to-Door)</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Η μεταφορά των πραγμάτων σας γίνεται με απόλυτη υπευθυνότητα. Διαθέτουμε έμπειρο προσωπικό για τη σωστή φόρτωση, μεταφορά και εκφόρτωση των αντικειμένων σας σε Αθήνα και Χανιά.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <span class="bg-teal-50 text-teal-600 p-2 rounded-full"><i class="fa-solid fa-check"></i></span>
+                            <span class="font-medium">Καθημερινές φορτώσεις</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <span class="bg-teal-50 text-teal-600 p-2 rounded-full"><i class="fa-solid fa-check"></i></span>
+                            <span class="font-medium">Διανομή εντός πόλης</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <span class="bg-teal-50 text-teal-600 p-2 rounded-full"><i class="fa-solid fa-check"></i></span>
+                            <span class="font-medium">Μετακομίσεις σπιτιών</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <span class="bg-teal-50 text-teal-600 p-2 rounded-full"><i class="fa-solid fa-check"></i></span>
+                            <span class="font-medium">Επαγγελματικά φορτία</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spotlight 2: Storage (With negative constraint) -->
+            <div id="storage" class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm grid md:grid-cols-12 mb-12 items-center">
+                <div class="md:col-span-5 md:order-last bg-gradient-to-br from-slate-900 to-slate-800 p-12 text-white h-full flex flex-col justify-center min-h-[320px]">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-warehouse text-5xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Αποθήκευση Παντός Είδους</h3>
+                    <p class="text-slate-300">
+                        Ασφαλείς και καθαροί χώροι φύλαξης για όσο διάστημα χρειάζεστε, με εύκολη πρόσβαση.
+                    </p>
+                </div>
+                <div class="md:col-span-7 p-8 md:p-12 space-y-6">
+                    <h4 class="text-xl font-bold text-blue-950">Αποθηκευτικοί χώροι υψηλής ασφάλειας</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Φυλάσσουμε τα πράγματά σας (έπιπλα, κούτες, εξοπλισμό, εμπορεύματα) σε ελεγχόμενους και απόλυτα στεγνούς χώρους. 
+                    </p>
+                    
+                    <!-- CRITICAL NOTICE / CONSTRAINT -->
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fa-solid fa-circle-exclamation text-amber-600 text-lg"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h5 class="text-sm font-bold text-amber-900 uppercase tracking-wider">Σημαντική Σημείωση</h5>
+                                <p class="text-sm text-amber-800 mt-1">
+                                    Παρέχεται αποθήκευση για κάθε είδους αντικείμενο, <strong>εκτός από ψύξη και κατεψυγμένα προϊόντα</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-shield-halved mr-1 text-teal-600"></i> 24/7 Φύλαξη</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-fire-extinguisher mr-1 text-teal-600"></i> Πυρασφάλεια</span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-box mr-1 text-teal-600"></i> Ευέλικτος χρόνος φύλαξης</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spotlight 3: Monthly packages (Loyal customers) -->
+            <div id="offers" class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm grid md:grid-cols-12 items-center">
+                <div class="md:col-span-5 bg-gradient-to-br from-teal-700 to-emerald-600 p-12 text-white h-full flex flex-col justify-center min-h-[320px]">
+                    <div class="mb-6">
+                        <i class="fa-solid fa-tags text-5xl text-teal-200 animate-bounce"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Μηνιαία Πακέτα</h3>
+                    <p class="text-teal-100">
+                        Ειδικά σχεδιασμένα για επαγγελματίες και ιδιώτες με συχνές ανάγκες μεταφορών.
+                    </p>
+                </div>
+                <div class="md:col-span-7 p-8 md:p-12 space-y-6">
+                    <h4 class="text-xl font-bold text-blue-950">Σημαντική έκπτωση για συχνούς πελάτες</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Εάν στέλνετε συχνά εμπορεύματα ή δέματα μεταξύ Αθήνας και Χανίων, σας προσφέρουμε τη δυνατότητα <strong>μηνιαίας συνεργασίας (πακέτο)</strong>. Εξασφαλίστε προνομιακές τιμές, σταθερά δρομολόγια και προτεραιότητα στις φορτώσεις.
+                    </p>
+                    <div class="p-4 bg-teal-50 border border-teal-100 rounded-2xl flex items-start space-x-3">
+                        <i class="fa-solid fa-percent text-teal-600 text-xl mt-1"></i>
+                        <div>
+                            <h5 class="font-bold text-teal-900">Πώς λειτουργεί;</h5>
+                            <p class="text-sm text-teal-800">Εκτιμούμε τον όγκο των μηνιαίων μεταφορών σας και σας δίνουμε μια σταθερή, εξαιρετικά μειωμένη τιμή ανά αποστολή.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Contact & Form -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-teal-600 font-extrabold uppercase tracking-wider text-sm block mb-2">Επικοινωνία</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-blue-950">Είμαστε δίπλα σας</h2>
+                        <p class="text-gray-600 mt-4">
+                            Επικοινωνήστε μαζί μας τηλεφωνικά, μέσω email ή συμπληρώστε τη φόρμα για να σας δώσουμε άμεσα προσφορά για τη δική σας μεταφορά ή αποθήκευση.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Head Office -->
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-teal-50 text-teal-600 p-3 rounded-xl mt-1">
+                                <i class="fa-solid fa-truck text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-950">ΚΡΟΝΟΣ ΟΕ - Αφοί Δρακάκη</h4>
+                                <p class="text-sm text-gray-500">Γενικές Μεταφορές & Διανομές</p>
+                                <p class="text-sm text-gray-500">ΑΦΜ: XXXXXXXXX | ΔΟΥ: Χανίων</p>
+                            </div>
+                        </div>
+
+                        <!-- Chania Info -->
+                        <div class="border-l-2 border-teal-500 pl-4 space-y-1">
+                            <h5 class="font-bold text-blue-900 text-sm uppercase">Κατάστημα Χανιά</h5>
+                            <p class="text-gray-700 text-sm">Λιτσάκιδων, Γαλατάς, Χανιά</p>
+                            <p class="text-teal-600 font-semibold text-sm">Τηλ: 28210 XXXXX</p>
+                        </div>
+
+                        <!-- Athens Info -->
+                        <div class="border-l-2 border-blue-500 pl-4 space-y-1">
+                            <h5 class="font-bold text-blue-900 text-sm uppercase">Κατάστημα Αθήνα</h5>
+                            <p class="text-gray-700 text-sm">Επιδαύρου 13, Αγ. Ιωάννη Ρέντη, Αθήνα</p>
+                            <p class="text-blue-600 font-semibold text-sm">Τηλ: 210 XXXXXXX</p>
+                        </div>
+                    </div>
+
+                    <!-- Visual map placeholder to maintain clean design -->
+                    <div class="bg-gray-100 rounded-2xl p-6 border border-gray-200 text-center space-y-2">
+                        <i class="fa-solid fa-map-location-dot text-4xl text-gray-400"></i>
+                        <h4 class="font-bold text-gray-700">Ωράριο Λειτουργίας</h4>
+                        <p class="text-sm text-gray-500">Δευτέρα - Παρασκευή: 08:00 - 16:00<br>Σάββατο: 08:00 - 14:00</p>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-slate-50 p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="text-2xl font-bold text-blue-950 mb-6">Ζητήστε Δωρεάν Εκτίμηση Κόστους</h3>
+                    
+                    <form id="quote-form" onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Όνομα / Επωνυμία Εταιρείας *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" placeholder="π.χ. Ιωάννης Παπαδόπουλος">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Τηλέφωνο Επικοινωνίας *</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" placeholder="π.χ. 6971234567">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Διαδρομή / Σημείο Παραλαβής *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white text-gray-700">
+                                    <option value="chania-athens">Από Χανιά προς Αθήνα</option>
+                                    <option value="athens-chania">Από Αθήνα προς Χανιά</option>
+                                    <option value="chania-internal">Εσωτερική Διανομή στα Χανιά</option>
+                                    <option value="other">Άλλο Προορισμό (Κατόπιν συνεννόησης)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Τύπος Υπηρεσίας *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white text-gray-700">
+                                    <option value="transfer">Απλή Μεταφορά / Διανομή</option>
+                                    <option value="relocation">Μετακόμιση Οικοσκευής</option>
+                                    <option value="storage">Αποθήκευση (εκτός ψύξης)</option>
+                                    <option value="monthly">Μηνιαίο Συμβόλαιο (Συχνός Πελάτης)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Περιγραφή Αντικειμένων & Σημειώσεις</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" placeholder="Παρακαλούμε περιγράψτε τι θέλετε να μεταφέρετε (π.χ. διαστάσεις, βάρος, αριθμός κιβωτίων, όροφος κλπ)"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-blue-900 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2">
+                            <span>Αποστολή Αιτήματος</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Alert Component (Hidden by default) -->
+                    <div id="success-message" class="hidden mt-6 bg-emerald-50 border border-emerald-200 text-emerald-800 p-5 rounded-2xl flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-2xl text-emerald-600 mt-0.5"></i>
+                        <div>
+                            <h4 class="font-bold">Επιτυχής Αποστολή!</h4>
+                            <p class="text-sm mt-1">Το μήνυμά σας στάλθηκε με επιτυχία στην εταιρεία <strong>ΚΡΟΝΟΣ ΟΕ</strong>. Ένας εκπρόσωπός μας θα επικοινωνήσει μαζί σας πολύ σύντομα.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-12 border-t border-blue-900/40">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-teal-600 text-white p-2 rounded-lg">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-wider">ΚΡΟΝΟΣ ΟΕ</span>
+                </div>
+                <p class="text-blue-200 text-sm max-w-sm">
+                    Η αξιόπιστη λύση για μεταφορές και αποθηκεύσεις μεταξύ Χανίων και Αθήνας. Πάντα με ασφάλεια, συνέπεια και τις καλύτερες τιμές της αγοράς.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-md font-bold uppercase tracking-wider text-teal-400 mb-4">Γρήγοροι Σύνδεσμοι</h4>
+                <ul class="space-y-2 text-sm text-blue-200">
+                    <li><a href="#about" class="hover:text-white transition-colors">Ποιοι Είμαστε</a></li>
+                    <li><a href="#services" class="hover:text-white transition-colors">Υπηρεσίες Μεταφορών</a></li>
+                    <li><a href="#storage" class="hover:text-white transition-colors">Χώροι Αποθήκευσης</a></li>
+                    <li><a href="#offers" class="hover:text-white transition-colors">Μηνιαία Πακέτα</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Ζητήστε Προσφορά</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-md font-bold uppercase tracking-wider text-teal-400 mb-4">Νομικά στοιχεία</h4>
+                <p class="text-sm text-blue-200">
+                    ΚΡΟΝΟΣ Ο.Ε. – Αφοί Δρακάκη<br>
+                    Έδρα: Χανιά, Κρήτη<br>
+                    ΓΕΜΗ: XXXXXXXXXXXX<br>
+                    © 2026 ΚΡΟΝΟΣ ΟΕ. All rights reserved.
+                </p>
+                <div class="flex space-x-4 mt-4 text-xl">
+                    <a href="#" class="text-blue-300 hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-blue-300 hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-blue-300 hover:text-white"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Scripts -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click of a link
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Handle quote form submit
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Show custom success message instead of standard alerts
+            const form = document.getElementById('quote-form');
+            const successMsg = document.getElementById('success-message');
+            
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            
+            // Optional: reset form after a delay or keep the state
+            setTimeout(() => {
+                form.reset();
+            }, 1000);
+        }
+
+        // Header color change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg', 'bg-white/95');
+                header.classList.remove('shadow-md');
+            } else {
+                header.classList.remove('shadow-lg');
+                header.classList.add('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
